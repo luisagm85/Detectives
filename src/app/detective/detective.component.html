@@ -1,0 +1,55 @@
+<div class="container">
+
+  <div class="container">
+      <div class="card animated fadeIn">
+          <h5 class="card-header">Registrar Detective</h5>
+          <div class="card-body">
+            <h5 class="card-title">Infromación del detective</h5>
+          <form ngNativeValidate [formGroup]="forma" class="form" (ngSubmit)=crearDetective()>
+                <div class="form-group row">
+                  <div class="col-sm-4">
+                    <label for="txtname">DNI</label>
+                    <input formControlName="dni" type="text" class="form-control input-sm" name="dni" id="txtname" required
+                      placeholder="DNI del detective" />
+                  </div>
+                  <div class="col-sm-4">
+                    <label for="txtname">Nombre</label>
+                    <input formControlName="Nombre" type="text" class="form-control input-sm" name="nombre" id="txtname" required
+                      placeholder="Nombre del detective" />
+                  </div>
+                  <div class="col-sm-4">
+                    <label for="txtname">Apellidos</label>
+                    <input formControlName="Apellidos" type="text" class="form-control input-sm" name="nombre" id="txtname" required
+                      placeholder="Apellidos del detective" />
+                  </div>
+                  <div class="col-sm-4">
+                    <label for="txtname">Dirección</label>
+                    <input formControlName="Dirección" type="text" class="form-control input-sm" name="Dirección" id="txtname" required
+                      placeholder="Dirección del detective" />
+                  </div>
+                  <div class="col-sm-4">
+                    <label for="txtname">Ciudad</label>
+                    <input formControlName="Ciudad" type="text" class="form-control input-sm" name="Ciudad" id="txtname" required
+                      placeholder="Ciudad del detective" />
+                  </div>
+                  <div class="col-sm-4">
+                    <label for="txtname">Código Postal</label>
+                    <input formControlName="CodPostal" type="number" class="form-control input-sm" name="CodPostal" id="txtname" required
+                      placeholder="Código postal del detective" />
+                  </div>
+                  <div class="col-sm-4">
+                    <label for="txtname">Telefono</label>
+                    <input formControlName="Telefono" type="text" class="form-control input-sm" name="Telefono" id="txtname" required
+                      placeholder="Telefono del detective" />
+                  </div>
+                </div>
+                  <button type="submit" class="btn btn-primary">Guardar</button>
+                
+              </form>
+          </div>
+        </div>
+  </div>
+
+
+
+  

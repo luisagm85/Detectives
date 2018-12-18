@@ -1,0 +1,46 @@
+<div class="container">
+
+  <div class="container">
+      <div class="card animated fadeIn">
+          <h5 class="card-header">Registrar Solicitud</h5>
+          <div class="card-body">
+            <h5 class="card-title">Información de la solicitud</h5>
+          <form ngNativeValidate [formGroup]="forma" class="form" (ngSubmit)=crearDetective()>
+                <div class="form-group row">
+                  <div class="col-sm-4">
+                    <label for="txtname">Fecha</label>
+                    <input formControlName="fecha" type="text" class="form-control input-sm" name="fecha" id="txtname" required
+                      placeholder="Fecha de la solicitud" />
+                  </div>
+                  <div class="col-sm-4">
+                    <label for="txtname">Descripción de la solicitud</label>
+                    <input formControlName="descripcion" type="text" class="form-control input-sm" name="descripcion" id="txtname" required
+                      placeholder="Descripción de la solicitud" />
+                  </div>
+                  <div class="col-sm-4">
+                    <label for="txtname">Resumen del CV del detective</label>
+                    <input formControlName="resumenCV" type="text" class="form-control input-sm" name="resumenCV" id="txtname" required
+                      placeholder="Resumen del CV del detective" />
+                  </div>
+                  <div class="col-sm-4">
+                    <label for="txtname">Estado</label>
+                    <input formControlName="estado" type="text" class="form-control input-sm" name="estado" id="txtname" required
+                      placeholder="Estado de la solicitud" />
+                  </div>
+                  <div class="form-group">
+                      
+                    <label >Detective</label>
+                    <select [(ngModel)]="formsolicitud.detective" name="detective" class="form-control" required>
+                      <option value="" >Seleccione Detective</option>
+                      <option *ngFor="let detective of detective" [value]="detective._id">
+                        {{detective.nombre}}
+                      </option>
+                    </select>
+                   </div>
+                </div>
+                  <button type="submit" class="btn btn-primary">Guardar</button>
+                
+              </form>
+          </div>
+        </div>
+  </div>

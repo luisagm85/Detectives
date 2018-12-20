@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Detective } from '../Clases/Detective';
-import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { FormGroup, FormControl, Validators, NgForm} from '@angular/forms';
 import { DetectiveService } from '../Services/detective.service';
+import { Nivel } from '../Clases/Nivel';
 
 @Component({
   selector: 'app-detective',
@@ -10,9 +11,10 @@ import { DetectiveService } from '../Services/detective.service';
 })
 export class DetectiveComponent implements OnInit {
 
+  
   detectives: Detective[] = [];
+  niveles: Nivel[];
   forma: FormGroup;
-  cargando: boolean = true;
   display = 'none';
 
 
@@ -38,12 +40,19 @@ export class DetectiveComponent implements OnInit {
       this.forma.value.direccion,
       this.forma.value.codPostal,
       this.forma.value.telefono,
+      this.forma.value.nivel
     );
     this._detectiveService.crearDetective(detective)
           .subscribe(resp => {
             console.log(resp);
             this.crearDetective();
                       });
+  }
+
+  asignarNivel(detective){
+
+    let nivel = this.forma.value.nivel;
+
   }
 
 }

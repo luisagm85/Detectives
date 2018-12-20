@@ -42,6 +42,15 @@
                     <input formControlName="Telefono" type="text" class="form-control input-sm" name="Telefono" id="txtname" required
                       placeholder="Telefono del detective" />
                   </div>
+                  <div class="form-group">
+                    <label >Nivel</label>
+                    <select [(ngModel)]="formdetective.Nivel" name="nivel" class="form-control" required>
+                      <option value="" >Seleccione Nivel</option>
+                      <option *ngFor="let nivel of nivel" [value]="nivel._nombre">
+                        {{nivel.nombre}}
+                      </option>
+                    </select>
+                   </div>
                 </div>
                   <button type="submit" class="btn btn-primary">Guardar</button>
                 
